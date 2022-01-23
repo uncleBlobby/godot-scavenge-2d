@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="Item" type="Node2D"]
+
+[node name="Stick" type="Node2D" parent="."]
+
+[node name="Stone" type="Node2D" parent="."]
