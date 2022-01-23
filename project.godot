@@ -8,6 +8,16 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "items",
+"language": "GDScript",
+"path": "res://Items.gd"
+} ]
+_global_script_class_icons={
+"items": ""
+}
+
 [application]
 
 config/name="Scavenge- 2d"

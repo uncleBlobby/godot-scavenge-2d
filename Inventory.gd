@@ -4,6 +4,9 @@ onready var items = get_tree().get_nodes_in_group("items")
 onready var itemList = get_node("/root/Main/Inventory/Panel/InventoryList")
 onready var this = get_node(".")
 
+onready var itemClass = preload("Items.gd")
+
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -37,7 +40,10 @@ var contents = {
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-
+	if (itemClass):
+		print("Preloading items class successful.")
+		var item = itemClass.new()
+		print(item.resources)
 	pass # Replace with function body.
 
 func _addItem(item):
