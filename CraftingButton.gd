@@ -1,10 +1,9 @@
 extends Button
 
 
-onready var craftingPanel = get_node("/root/Main/Crafting/Panel")
+onready var craftingPanel = get_node("/root/Main/Crafting")
 onready var this = get_node(".")
 
-var isVisible = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -14,12 +13,12 @@ func _ready():
 
 
 func _showHideCraftingPanel():
-	if !isVisible:
+	if !craftingPanel.isVisible:
 		craftingPanel.show()
-		isVisible = true
+		craftingPanel.isVisible = true
 	else: 
 		craftingPanel.hide()
-		isVisible = false
+		craftingPanel.isVisible = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

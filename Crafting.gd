@@ -1,5 +1,7 @@
 extends Node
 
+var isVisible = false
+
 var recipes = {
 	"Wooden Handle" : {
 		name = "Wooden Handle",

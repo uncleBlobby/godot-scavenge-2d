@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://ScavengeButton.gd" type="Script" id=1]
 [ext_resource path="res://Stone.tscn" type="PackedScene" id=2]
@@ -11,7 +11,8 @@
 [ext_resource path="res://CraftingButton.gd" type="Script" id=9]
 [ext_resource path="res://StatsButton.gd" type="Script" id=10]
 [ext_resource path="res://Main.gd" type="Script" id=11]
-[ext_resource path="res://Window Closer.gd" type="Script" id=12]
+[ext_resource path="res://inv Window Closer.gd" type="Script" id=12]
+[ext_resource path="res://crafting Window Closer.gd" type="Script" id=13]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.81195, 7.1059 )
@@ -70,7 +71,6 @@ position = Vector2( -83.9196, 39.0858 )
 position = Vector2( -83.9196, 39.0858 )
 
 [node name="Crafting" type="Node2D" parent="."]
-visible = false
 show_behind_parent = true
 z_index = -1
 script = ExtResource( 8 )
@@ -126,6 +126,40 @@ margin_top = 15.0
 margin_right = 361.0
 margin_bottom = 255.0
 
+[node name="crafting Window Closer" type="Node2D" parent="Crafting/Panel"]
+position = Vector2( 1009.46, 9.40595 )
+script = ExtResource( 13 )
+
+[node name="ColorRect" type="ColorRect" parent="Crafting/Panel/crafting Window Closer"]
+visible = false
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -10.0
+margin_bottom = 10.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Area2D" type="Area2D" parent="Crafting/Panel/crafting Window Closer"]
+visible = false
+z_index = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crafting/Panel/crafting Window Closer/Area2D"]
+visible = false
+position = Vector2( -5.30334, 4.59619 )
+shape = SubResource( 1 )
+
+[node name="Button" type="Button" parent="Crafting/Panel/crafting Window Closer"]
+margin_left = -19.2386
+margin_top = -0.222728
+margin_right = 0.761414
+margin_bottom = 19.7773
+text = "X"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="Stats" type="Node2D" parent="."]
 visible = false
 z_index = -1
@@ -158,6 +192,7 @@ __meta__ = {
 }
 
 [node name="Inventory" type="Node2D" parent="."]
+visible = false
 position = Vector2( -0.559448, -1.40921 )
 script = ExtResource( 5 )
 
@@ -203,11 +238,11 @@ max_columns = 7
 fixed_column_width = 100
 icon_mode = 0
 
-[node name="Window Closer" type="Node2D" parent="Inventory/Panel"]
+[node name="inv Window Closer" type="Node2D" parent="Inventory/Panel"]
 position = Vector2( 902.666, 1.41744 )
 script = ExtResource( 12 )
 
-[node name="ColorRect" type="ColorRect" parent="Inventory/Panel/Window Closer"]
+[node name="ColorRect" type="ColorRect" parent="Inventory/Panel/inv Window Closer"]
 visible = false
 anchor_left = 1.0
 anchor_right = 1.0
@@ -218,16 +253,16 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Area2D" type="Area2D" parent="Inventory/Panel/Window Closer"]
+[node name="Area2D" type="Area2D" parent="Inventory/Panel/inv Window Closer"]
 visible = false
 z_index = 5
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Inventory/Panel/Window Closer/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Inventory/Panel/inv Window Closer/Area2D"]
 visible = false
 position = Vector2( -5.30334, 4.59619 )
 shape = SubResource( 1 )
 
-[node name="Button" type="Button" parent="Inventory/Panel/Window Closer"]
+[node name="Button" type="Button" parent="Inventory/Panel/inv Window Closer"]
 margin_left = -19.2386
 margin_top = -0.222728
 margin_right = 0.761414
