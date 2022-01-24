@@ -53,21 +53,9 @@ func _addItem(item):
 	var this = inventory[str(item.name)]
 	this.quantity += 1
 	print(this)
-	#this["Quantity"] += 1
-	#print(inventory)
-	
-	#if item.name == "Stick":
-	#	contents.stick.quantity += 1
-	#if item.name == "Stone":
-	#	contents.stone.quantity += 1
-	#if item.name == "Plant Fiber":
-	#	contents.plantFiber.quantity += 1
-	#if item.name == "Berries":
-	#	contents.berries.quantity += 1
-	#if item.name == "Flint":
-	#	contents.flint.quantity += 1
+
 	itemList._clear()
-	itemList._populateList(this)
+	itemList._populateList(inventory)
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

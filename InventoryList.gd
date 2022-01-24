@@ -10,12 +10,13 @@ onready var itemList = get_node("ItemList")
 func _ready():
 	pass # Replace with function body.
 
-# loop through all items in inventory contents and add a text label for them
+# loop through all items in inventory contents and adds them to the inventory list window!
 func _populateList(inventory):
 
-	for items in inventory.contents.keys():
-		if inventory.contents[str(items)].quantity > 0:
-			itemList.add_item(inventory.contents[items].name + " " + str(inventory.contents[str(items)].quantity), null, true)
+	for items in inventory:
+		if inventory[str(items)].quantity > 0:
+			var texture = load(inventory[str(items)].sprite)
+			itemList.add_item(inventory[items].name + " " + str(inventory[str(items)].quantity), texture, true)
 
 
 func _clear():
