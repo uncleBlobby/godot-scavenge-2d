@@ -2,7 +2,10 @@ extends Node2D
 
 onready var items = get_tree().get_nodes_in_group("items")
 onready var itemList = get_node("/root/Main/Inventory/Panel/InventoryList")
+onready var inventoryList = get_node("/root/Main/Inventory/Panel/InventoryList/ItemList")
 onready var this = get_node(".")
+
+onready var main = preload("Main.gd")
 
 onready var itemClass = preload("Items.gd")
 
@@ -39,6 +42,8 @@ var contents = {
 }
 
 var inventory = {}
+var newMain
+var globals
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,6 +51,8 @@ func _ready():
 		print("Preloading items class successful.")
 		var item = itemClass.new()
 		print(item.resources)
+	newMain = main.new()
+	globals = newMain.globals
 	pass # Replace with function body.
 
 func _addItem(item):
@@ -55,8 +62,26 @@ func _addItem(item):
 
 	itemList._clear()
 	itemList._populateList(inventory)
+	if globals.activeInventoryItem != null:
+		inventoryList.select(globals.activeInventoryItem[0])
 	
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(_delta):
+	globals = newMain.globals
+	if inventoryList.is_anything_selected():
+		if globals.activeInventoryItem == null:
+			var selected = inventoryList.get_selected_items()
+			globals.activeInventoryItem = inventoryList.get_selected_items()
+			var itemName = inventoryList.get_item_text(selected[0])			
+			pass
+		if globals.activeInventoryItem != null:
+			var selected = inventoryList.get_selected_items()
+			globals.activeInventoryItem = inventoryList.get_selected_items()
+	if !inventoryList.is_anything_selected():
+		if globals.activeInventoryItem != null:
+			#itemDetailList populates to the right
+			var selected = inventoryList.get_selected_items()
+			globals.activeInventoryItem = inventoryList.get_selected_items()
+
+
