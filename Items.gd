@@ -10,7 +10,7 @@ export var resources = {
 		rarity = 1,
 		consumable = false,
 		craftable = true,
-		sprite = "res://assets/sprites/item-placeholder.png",
+		sprite = "res://assets/sprites/stick.png",
 	},
 	"Stone" : {
 		name = "Stone",
@@ -52,9 +52,30 @@ export var resources = {
 		name = "{{ ITEM }}",
 		description = "A generic description of the thing.",
 		quantity = 0,
-		rarity = 1,     # rarity is the highest possible odds of being found.
+		rarity = 1,     # rarity 1 is the highest possible odds of being found (0 will be never found)
 		consumable = false,
 		craftable = false,
+		sprite = "res://assets/sprites/item-placeholder.png",
+	},
+}
+
+export var craftables = {
+	"{{ ITEM }}" : {
+		name = "{{ ITEM }}",
+		description = "A generic description of the thing.",
+		quantity = 0,
+		rarity = 1,     # rarity 1 is the highest possible odds of being found (0 will be never found)
+		consumable = false,
+		craftable = false,
+		sprite = "res://assets/sprites/item-placeholder.png",
+	},
+	"Wooden Handle" : {
+		name = "Wooden Handle",
+		description = "A lightweight wooden handle, useful for crafting basic tools.",
+		quantity = 0,
+		rarity = 0.05,     # rarity 1 is the highest possible odds of being found (0 will be never found)
+		consumable = false,
+		craftable = true,
 		sprite = "res://assets/sprites/item-placeholder.png",
 	},
 }

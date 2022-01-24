@@ -49,7 +49,7 @@ func _onClick():
 
 func _scavengeSuccess():
 	var newItem = _findRandomItem()
-	print('You found a ', newItem.name)
+	#print('You found a ', newItem.name)
 	#inventory.add_child(newItem)
 	inventory._addItem(newItem)
 	#print(inventory.contents)

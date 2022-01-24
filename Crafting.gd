@@ -83,6 +83,8 @@ onready var detailWindow = get_node("Panel/RecipeDetailWindow")
 onready var detailWindowTitle = get_node("Panel/RecipeDetailWindow/RecipeDetailLabel")
 onready var recipeComponentList = get_node("Panel/RecipeDetailWindow/RecipeComponentList")
 
+export var selectedRecipe = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var counter = 0
@@ -101,6 +103,8 @@ func _process(_delta):
 		recipeComponentList.clear()
 		var selected = recipeList.get_selected_items()
 		var recipeName = recipeList.get_item_text(selected[0])
+		#print(recipeName)
+		selectedRecipe = recipeName
 		#print(selected[0])
 		#detailWindowTitle.set_text(recipeList[recipeList.get_selected_items()])
 		#print(recipeList.get_selected_items())

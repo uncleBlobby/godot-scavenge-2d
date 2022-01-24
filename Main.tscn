@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://ScavengeButton.gd" type="Script" id=1]
 [ext_resource path="res://Stone.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Main.gd" type="Script" id=11]
 [ext_resource path="res://inv Window Closer.gd" type="Script" id=12]
 [ext_resource path="res://crafting Window Closer.gd" type="Script" id=13]
+[ext_resource path="res://Craft Item Button.gd" type="Script" id=14]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.81195, 7.1059 )
@@ -71,7 +72,6 @@ position = Vector2( -83.9196, 39.0858 )
 position = Vector2( -83.9196, 39.0858 )
 
 [node name="Crafting" type="Node2D" parent="."]
-visible = false
 show_behind_parent = true
 z_index = -1
 script = ExtResource( 8 )
@@ -126,6 +126,16 @@ margin_left = 4.0
 margin_top = 15.0
 margin_right = 361.0
 margin_bottom = 255.0
+
+[node name="Craft Item Button" type="Button" parent="Crafting/Panel/RecipeDetailWindow"]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -128.0
+margin_top = -73.0
+text = "Craft Item"
+script = ExtResource( 14 )
 
 [node name="crafting Window Closer" type="Node2D" parent="Crafting/Panel"]
 position = Vector2( 1009.46, 9.40595 )
@@ -193,6 +203,7 @@ __meta__ = {
 }
 
 [node name="Inventory" type="Node2D" parent="."]
+visible = false
 position = Vector2( -0.559448, -1.40921 )
 script = ExtResource( 5 )
 
