@@ -50,9 +50,8 @@ func _ready():
 
 func _addItem(item):
 	inventory[str(item.name)] = item
-	var this = inventory[str(item.name)]
-	this.quantity += 1
-	print(this)
+	var thisItem = inventory[str(item.name)]
+	thisItem.quantity += 1
 
 	itemList._clear()
 	itemList._populateList(inventory)

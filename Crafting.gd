@@ -122,5 +122,5 @@ func _parseComponentsForToolTip(recipeItem):
 	print(outputString)
 	return outputString
 
-func _appendComponentsToRecipeComponentList(recipeItem):
-	pass
+#func _appendComponentsToRecipeComponentList(recipeItem):
+#	pass
