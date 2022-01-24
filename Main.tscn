@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://ScavengeButton.gd" type="Script" id=1]
 [ext_resource path="res://Stone.tscn" type="PackedScene" id=2]
@@ -10,8 +10,10 @@
 [ext_resource path="res://Crafting.gd" type="Script" id=8]
 [ext_resource path="res://CraftingButton.gd" type="Script" id=9]
 [ext_resource path="res://StatsButton.gd" type="Script" id=10]
+[ext_resource path="res://Main.gd" type="Script" id=11]
 
 [node name="Main" type="Node2D"]
+script = ExtResource( 11 )
 
 [node name="Player" type="Node2D" parent="."]
 script = ExtResource( 7 )

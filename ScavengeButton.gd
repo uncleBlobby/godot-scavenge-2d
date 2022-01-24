@@ -3,22 +3,24 @@ extends Button
 
 onready var progress = get_node("ColorRect")
 onready var this = get_node(".")
-onready var items = get_tree().get_nodes_in_group("items")
 onready var inventory = get_node("/root/Main/Inventory")
 onready var player = get_node("/root/Main/Player")
+
+onready var itemClass = preload("Items.gd")
 
 var isActive = false
 
 var debugSpeed = 100
 
+var item
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	print(items)
+	if (itemClass):
+		item = itemClass.new()
 	progress.rect_scale.x = 0
 	progress.modulate = Color(1, 1, 1, 0)
 	this.connect("pressed", self, "_onClick")
-	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,7 +58,17 @@ func _scavengeSuccess():
 	player._populateStats(player.stats)
 
 func _findRandomItem():
-	var rangeLimit = items.size()
-	var randomPick = rand_range(0, rangeLimit)
-	return items[randomPick]
+	#var rangeLimit = items.size()
+	var randomPick = rand_range(0, 1)
+	var possibleFinds = []
+	
+	for i in item.resources:
+		if item.resources[i].rarity > randomPick:
+			possibleFinds.append(item.resources[i])
+			
+	var rangeLimit = possibleFinds.size()
+	var itemChoice = floor(rand_range(0, rangeLimit))
+	return possibleFinds[itemChoice]
+
+	#return items[randomPick]
 		

@@ -6,7 +6,7 @@ export var resources = {
     "Stick" : {
         name = "Stick",
         description = "A small piece of wood.",
-        rarity = 0.75,
+        rarity = 1,
     },
     "Stone" : {
         name = "Stone",
