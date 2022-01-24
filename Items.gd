@@ -19,7 +19,7 @@ export var resources = {
 		rarity = 0.75,
 		consumable = false,
 		craftable = true,
-		sprite = "res://assets/sprites/item-placeholder.png",
+		sprite = "res://assets/sprites/stone.png",
 	},
 	"Plant Fiber" : {
 		name = "Plant Fiber",
@@ -37,7 +37,7 @@ export var resources = {
 		rarity = 0.33,
 		consumable = true,
 		craftable = true,
-		sprite = "res://assets/sprites/item-placeholder.png",
+		sprite = "res://assets/sprites/berries.png",
 	},
 	"Flint" : {
 		name = "Flint",

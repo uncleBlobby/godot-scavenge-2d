@@ -103,13 +103,8 @@ func _process(_delta):
 		recipeComponentList.clear()
 		var selected = recipeList.get_selected_items()
 		var recipeName = recipeList.get_item_text(selected[0])
-		#print(recipeName)
 		selectedRecipe = recipeName
-		#print(selected[0])
-		#detailWindowTitle.set_text(recipeList[recipeList.get_selected_items()])
-		#print(recipeList.get_selected_items())
 		detailWindowTitle.set_text(recipeName)
-		#recipeComponentList.add_item(recipes[str(recipeName)].name, null, false)
 		for component in recipes[str(recipeName)].components:
 			recipeComponentList.add_item(recipes[str(recipeName)].components[component].name + ' x ' + str(recipes[str(recipeName)].components[component].quantity), null, false)
 		#what happens here if I add a comment?
