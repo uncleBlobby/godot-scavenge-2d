@@ -6,7 +6,7 @@ onready var this = get_node(".")
 
 onready var itemClass = preload("Items.gd")
 
-
+var isVisible = false
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"

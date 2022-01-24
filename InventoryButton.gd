@@ -4,7 +4,7 @@ extends Button
 onready var inventory = get_node("/root/Main/Inventory")
 onready var this = get_node(".")
 
-var isVisible = false
+#var isVisible = false
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,10 +26,10 @@ func _printInventory():
 
 
 func _showHideInventoryPanel():
-	if !isVisible:
+	if !inventory.isVisible:
 		inventory.show()
-		isVisible = true
+		inventory.isVisible = true
 	else:
 		inventory.hide()
-		isVisible = false
+		inventory.isVisible = false
 	#print(inventory.hide())
